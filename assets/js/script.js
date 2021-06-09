@@ -1,7 +1,15 @@
 let questionElement = document.getElementById('question');
 let answerButtonsElement = document.getElementById('answers-container');
+let nextButton = document.getElementById('next-button');
 
 let shuffledQuestions, currentQuestionIndex
+
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    nextQuestion();
+    resetState();
+    nextButton.classList.add('hide');
+})
 
 function startGame(){
     console.log('Game started...');
@@ -10,12 +18,6 @@ function startGame(){
     nextQuestion();
 }
 
-function nextQuestion(){
-    resetQuestion();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
-}
-
-
 function showQuestion(question){
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
@@ -23,17 +25,28 @@ function showQuestion(question){
         button.innerText = answer.text
         button.classList.add('btn')
         answerButtonsElement.appendChild(button)
+        button.addEventListener('click', selectedAnswer)
     })
     
 }
 
-
-
-function resetQuestion(){
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-    };
+function nextQuestion(){
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
+
+
+
+function selectedAnswer(event){
+    nextButton.classList.remove('hide')
+    selectedButton = event.target;
+}
+
+function resetState(){while (answerButtonsElement.firstChild){
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+}
+}
+
+let MAX_QUESTIONS = 10;
 
 let questions = [
     {
@@ -66,12 +79,40 @@ let questions = [
     {
         question: 'What team did Babe Ruth play for first?',
         answers: [
-            {text: 'Boston Red Sox', correct: false},
+            {text: 'Boston Red Sox', correct: true},
             {text: 'Chicago White Sox', correct: false},
-            {text: 'Baltimore Orioles', correct: true},
+            {text: 'Baltimore Orioles', correct: false},
             {text: 'New York Yankees', correct: false},
         ] 
     },
+    {
+        question: 'What team did Shohei Ohtani play for in the Japanese league?',
+        answers: [
+            {text: 'Hokkaido Nippon-Ham Fighters', correct: false},
+            {text: 'Hanshin Tigers', correct: false},
+            {text: 'Yomiuri Giants', correct: true},
+            {text: 'Orix Buffaloes', correct: false},
+        ] 
+    },
+    {
+        question: 'Which pitcher holds the world record for fastest ball thrown?',
+        answers: [
+            {text: 'Jordan Hicks', correct: false},
+            {text: 'Aroldis Chapman', correct: true},
+            {text: 'Randy Johnson', correct: false},
+            {text: 'Justin Verlander', correct: false},
+        ] 
+    },
+    {
+        question: 'Who did Boston play against in the first World Series?',
+        answers: [
+            {text: 'Arizona', correct: false},
+            {text: 'Miami', correct: true},
+            {text: 'Houston', correct: false},
+            {text: 'Pittsburgh', correct: true},
+        ] 
+    },
+    
 ]
 
 document.onload = startGame();
