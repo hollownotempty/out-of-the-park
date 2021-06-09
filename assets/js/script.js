@@ -1,15 +1,26 @@
 let questionElement = document.getElementById('question');
 let answerButtonsElement = document.getElementById('answers-container');
 let nextButton = document.getElementById('next-button');
+let finishButton = document.getElementById('finish-button');
+let fullGame = document.getElementById('game');
 
 let shuffledQuestions, currentQuestionIndex
 
+let questionsAsked = 0;
 nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    nextQuestion();
-    resetState();
-    nextButton.classList.add('hide');
+    questionsAsked++;
+    if (questionsAsked === 10){
+        finishButton.classList.remove('hide');
+        nextButton.classList.add('hide');
+        fullGame.style.display = 'none';
+    } else {
+        currentQuestionIndex++;
+        resetState();
+        nextQuestion();
+        nextButton.classList.add('hide')
+    };
 })
+
 
 function startGame(){
     console.log('Game started...');
@@ -39,6 +50,11 @@ function nextQuestion(){
 function selectedAnswer(event){
     nextButton.classList.remove('hide')
     selectedButton = event.target;
+    incrementScore();
+}
+
+function incrementScore(){
+
 }
 
 function resetState(){while (answerButtonsElement.firstChild){
@@ -47,6 +63,7 @@ function resetState(){while (answerButtonsElement.firstChild){
 }
 
 let MAX_QUESTIONS = 10;
+let score = 0;
 
 let questions = [
     {
@@ -107,12 +124,128 @@ let questions = [
         question: 'Who did Boston play against in the first World Series?',
         answers: [
             {text: 'Arizona', correct: false},
-            {text: 'Miami', correct: true},
+            {text: 'Miami', correct: false},
             {text: 'Houston', correct: false},
             {text: 'Pittsburgh', correct: true},
         ] 
     },
-    
+    {
+        question: 'How long was the shortest game in baseball history?',
+        answers: [
+            {text: '1 hour', correct: false},
+            {text: '2 hours', correct: false},
+            {text: '51 minutes', correct: true},
+            {text: '22 minutes', correct: false},
+        ] 
+    },
+    {
+        question: 'What year was the MLB founded?',
+        answers: [
+            {text: '1876', correct: false},
+            {text: '1932', correct: false},
+            {text: '1903', correct: true},
+            {text: '1901', correct: false},
+        ]
+    },
+    {
+        question: 'How long was the longest game in baseball history?',
+        answers: [
+            {text: '8 hours 6 minutes', correct: true},
+            {text: '4 hours 3 minutes', correct: false},
+            {text: '9 days', correct: false},
+            {text: '13 hours 20 minutes', correct: false},
+        ] 
+    },
+    {
+        question: 'What player is credited with the most home runs in their career?',
+        answers: [
+            {text: 'Albert Pujols', correct: false},
+            {text: 'Willie Mays', correct: false},
+            {text: 'Barry Bonds', correct: true},
+            {text: 'Ken Griffey Jr.', correct: false},
+        ] 
+    },
+    {
+        question: 'Which player has played for the most franchises in MLB history?',
+        answers: [
+            {text: 'Ron Villione', correct: false},
+            {text: 'Edwin Jackson', correct: true},
+            {text: 'Deacon McGuire', correct: false},
+            {text: 'Henry Blanco', correct: false},
+        ] 
+    },
+    {
+        question: 'What team was caught cheating by stealing signs in 2017 and 2018?',
+        answers: [
+            {text: 'Baltimore Orioles', correct: false},
+            {text: 'Oakland Athletics', correct: false},
+            {text: 'Philadelphia Phillies', correct: false},
+            {text: 'Houston Astros', correct: true},
+        ] 
+    },
+    {
+        question: '?',
+        answers: [
+            {text: '', correct: true},
+            {text: '', correct: false},
+            {text: '', correct: false},
+            {text: '', correct: false},
+        ] 
+    },
+    {
+        question: '?',
+        answers: [
+            {text: '', correct: false},
+            {text: '', correct: true},
+            {text: '', correct: false},
+            {text: '', correct: false},
+        ] 
+    },
+    {
+        question: '?',
+        answers: [
+            {text: '', correct: false},
+            {text: '', correct: false},
+            {text: '', correct: true},
+            {text: '', correct: false},
+        ] 
+    },
+    {
+        question: '?',
+        answers: [
+            {text: '', correct: false},
+            {text: '', correct: true},
+            {text: '', correct: false},
+            {text: '', correct: false},
+        ] 
+    },
+    {
+        question: '?',
+        answers: [
+            {text: '', correct: true},
+            {text: '', correct: false},
+            {text: '', correct: false},
+            {text: '', correct: false},
+        ] 
+    },
+    {
+        question: '?',
+        answers: [
+            {text: '', correct: false},
+            {text: '', correct: false},
+            {text: '', correct: false},
+            {text: '', correct: true},
+        ] 
+    },
+    {
+        question: '?',
+        answers: [
+            {text: '', correct: false},
+            {text: '', correct: false},
+            {text: '', correct: true},
+            {text: '', correct: false},
+        ] 
+    }
 ]
 
 document.onload = startGame();
