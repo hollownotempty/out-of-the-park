@@ -78,18 +78,20 @@ footer {
     text-align: center;
 }
 
-.answers-container {
+#answers-container {
     margin-top: 15px;
     display: grid;
     grid-template-columns: repeat(2, auto);
 }
 
-.answers-container button {
-    font-size: 1.7rem;
+.btn {
+    font-size: 1.5rem;
     padding: 20px;
     margin: 10px;
     border-radius: 30px;
     border: none;
+    width: 164px;
+    text-align: center;
 }
 
 .answers-container button:hover {
