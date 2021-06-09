@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700&family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    background-color: #002D72;
+    color: white;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+}
