@@ -2,6 +2,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -10,6 +12,95 @@
     font-family: 'Libre Franklin', sans-serif;
 }
 
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
 h1, h2, h3, h4, h5 {
     font-family: 'Poppins', sans-serif;
 }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+header a {
+    height: 100px;
+    text-decoration: none;
+    color: white;
+}
+
+#start-menu {
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+#start-menu a {
+    text-decoration: none;
+    color: white;
+    transition: all 500ms ease-out;
+}
+
+#start-menu a:hover {
+    color: #D50032;
+    text-shadow: 0px 0px 6px rgba(213, 0, 50, 1);
+    /* transition: 500ms ease-out; */
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 30px;
+}
+
+#game {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10%;
+}
+
+#game h2 {
+    text-align: center;
+}
+
+.answers-container {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.answers-container button {
+    font-size: 1.7rem;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.answers-container button:hover {
+    border: 30px black;
+}
+
+.answers-container button.correct {
+    background-color: lightgreen;
+}
+
+.answers-container button.wrong {
+    background-color: red;
+}
+
