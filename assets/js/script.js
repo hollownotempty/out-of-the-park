@@ -21,6 +21,15 @@ nextButton.addEventListener('click', () => {
     };
 })
 
+function checkAnswer(){
+    if ('correct: true' in selectedButton){
+        incrementScore();
+    } else {
+        console.log('wrong answer selected')
+    }
+    console.log('correct answer selected')
+}
+
 
 function startGame(){
     console.log('Game started...');
@@ -50,11 +59,13 @@ function nextQuestion(){
 function selectedAnswer(event){
     nextButton.classList.remove('hide')
     selectedButton = event.target;
+    checkAnswer();
     incrementScore();
 }
 
+let score = 0;
 function incrementScore(){
-
+    score++;
 }
 
 function resetState(){while (answerButtonsElement.firstChild){
@@ -63,7 +74,6 @@ function resetState(){while (answerButtonsElement.firstChild){
 }
 
 let MAX_QUESTIONS = 10;
-let score = 0;
 
 let questions = [
     {
@@ -184,66 +194,66 @@ let questions = [
         ] 
     },
     {
-        question: '?',
+        question: 'Where is the baseball Hall Of Fame?',
         answers: [
-            {text: '', correct: true},
-            {text: '', correct: false},
-            {text: '', correct: false},
-            {text: '', correct: false},
+            {text: 'Cooperstown, New York', correct: true},
+            {text: 'Dublin, Georgia', correct: false},
+            {text: 'Los Angeles, California', correct: false},
+            {text: 'Seattle, Washington', correct: false},
         ] 
     },
     {
-        question: '?',
+        question: 'Who is the oldest recorded player in the MLB?',
         answers: [
-            {text: '', correct: false},
-            {text: '', correct: true},
-            {text: '', correct: false},
-            {text: '', correct: false},
+            {text: "Charley O'Leary", correct: false},
+            {text: 'Leroy Paige', correct: true},
+            {text: "Jim O'Rourke", correct: false},
+            {text: 'Hoyt Wilhelm', correct: false},
         ] 
     },
     {
-        question: '?',
+        question: 'What famous slugger retired after suffering from ALS?',
         answers: [
-            {text: '', correct: false},
-            {text: '', correct: false},
-            {text: '', correct: true},
-            {text: '', correct: false},
+            {text: 'Red Ruffing', correct: false},
+            {text: 'Johnny Murphy', correct: false},
+            {text: 'Lou Gehrig', correct: true},
+            {text: 'Joe DiMaggio', correct: false},
         ] 
     },
     {
-        question: '?',
+        question: 'How many players are in a teams batting order?',
         answers: [
-            {text: '', correct: false},
-            {text: '', correct: true},
-            {text: '', correct: false},
-            {text: '', correct: false},
+            {text: '12', correct: false},
+            {text: '9', correct: true},
+            {text: '8', correct: false},
+            {text: '6', correct: false},
         ] 
     },
     {
-        question: '?',
+        question: 'Which of these is not a type of pitch?',
         answers: [
-            {text: '', correct: true},
-            {text: '', correct: false},
-            {text: '', correct: false},
-            {text: '', correct: false},
+            {text: 'Shoulder Curveball', correct: true},
+            {text: 'Slider', correct: false},
+            {text: 'Eephus', correct: false},
+            {text: 'Four-Seam Fastball', correct: false},
         ] 
     },
     {
-        question: '?',
+        question: 'How many balls does a pitcher need to throw to walk a batter?',
         answers: [
-            {text: '', correct: false},
-            {text: '', correct: false},
-            {text: '', correct: false},
-            {text: '', correct: true},
+            {text: '3', correct: false},
+            {text: '5', correct: false},
+            {text: '2', correct: false},
+            {text: '4', correct: true},
         ] 
     },
     {
-        question: '?',
+        question: 'What is another name for baseball stadium?',
         answers: [
-            {text: '', correct: false},
-            {text: '', correct: false},
-            {text: '', correct: true},
-            {text: '', correct: false},
+            {text: 'A Ring', correct: false},
+            {text: 'An Octagon', correct: false},
+            {text: 'A Diamond', correct: true},
+            {text: 'An Alley', correct: false},
         ] 
     }
 ]
