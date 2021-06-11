@@ -49,7 +49,6 @@ header a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
 }
 
 #start-menu a {
@@ -59,23 +58,25 @@ header a {
 }
 
 #start-menu a:hover {
-    color: #D50032;
-    text-shadow: 0px 0px 6px rgba(213, 0, 50, 1);
+    /* color: #D50032;
+    text-shadow: 0px 0px 6px rgba(213, 0, 50, 1); */
     /* transition: 500ms ease-out; */
+    opacity: 0.7;
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
     padding: 30px;
 }
 
 #game {
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 220px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,21 +94,31 @@ footer {
 }
 
 .btn {
-    font-size: 1.5rem;
     padding: 20px;
     margin: 10px;
     border-radius: 30px;
     border: none;
-    width: 164px;
+    width: 150px;
     text-align: center;
     box-shadow: 0px 0px 23px 0px rgb(0 0 0 / 42%);
-    text-shadow: 0px 3px 10px rgb(0 0 0 / 47%);
-    font-family: 'Poppin', sans;
+    font-family: 'Poppins', sans;
+    font-weight: 400;
 }
 
 #bottom-buttons {
     display: flex;
     justify-content: center;
+}
+
+.bottom-btn {
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans;
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -136,13 +147,15 @@ footer {
 }
 
 #instructions ol li {
-    margin-top: 10%;
+    margin-top: 30px;
 }
 
 .hide {
     display: none;
 }
 
-@media only screen and (max-width: 600px){
-
+.end-screen {
+    height: calc(100vh - 200px);
+    line-height: calc(100vh - 200px);
+    text-align: center;
 }
