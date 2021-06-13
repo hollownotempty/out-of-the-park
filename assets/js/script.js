@@ -3,7 +3,8 @@ let answerButtonsElement = document.getElementById('answers-container');
 let nextButton = document.getElementById('next-button');
 let finishButton = document.getElementById('finish-button');
 let fullGame = document.getElementById('game');
-let gameContainer = document.getElementById('container')
+let gameContainer = document.getElementById('container');
+let navButtons = document.getElementById('bottom-buttons');
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -91,7 +92,12 @@ function gameEnd(event){
     let endScreen = document.createElement('h2');
     endScreen.classList.add('end-screen')
     endScreen.innerText = 'You score is ' + score;
-    gameContainer.appendChild(endScreen);
+    navButtons.appendChild(endScreen);
+    let restartButton = document.createElement('button');
+    restartButton.classList.add('restart-btn')
+    restartButton.innerText = 'Restart?';
+    restartButton.addEventListener('click', refreshPage())
+    navButtons.appendChild(restartButton);
 }
 
 function resetState(){while (answerButtonsElement.firstChild){
