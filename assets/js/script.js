@@ -8,23 +8,6 @@ let gameContainer = document.getElementById('container')
 let shuffledQuestions, currentQuestionIndex
 
 let questionsAsked = 0;
-nextButton.addEventListener('click', () => {
-    questionsAsked++;
-    checkAnswer();
-    if (questionsAsked === 9){
-        nextButton.innerText = 'Finish';
-    }
-    if (questionsAsked === 10){
-        fullGame.style.display = 'none';
-        nextButton.classList.add('hide')
-        gameEnd();
-    } else {
-        currentQuestionIndex++;
-        resetState();
-        nextQuestion();
-        nextButton.classList.add('hide')
-    };
-})
 
 function checkAnswer(){
     
@@ -56,6 +39,24 @@ function nextQuestion(){
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
+nextButton.addEventListener('click', () => {
+    questionsAsked++;
+    checkAnswer();
+    if (questionsAsked === 9){
+        nextButton.innerText = 'Finish';
+    }
+    if (questionsAsked === 10){
+        fullGame.style.display = 'none';
+        nextButton.classList.add('hide')
+        gameEnd();
+    } else {
+        currentQuestionIndex++;
+        resetState();
+        nextQuestion();
+        nextButton.classList.add('hide')
+    };
+    console.log('Your current score is ' + score);
+})
 
 
 function selectedAnswer(e){
@@ -65,14 +66,15 @@ function selectedAnswer(e){
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    console.log('Your current score is ' + score);
+    if (selectedButton.dataset.correct){
+        score++;
+    }
 }
 
 function setStatusClass(element, correct){
     clearStatusClass(element)
     if(correct){
         element.classList.add('correct')
-        score++;
     } else {
         element.classList.add('wrong')
     }
@@ -121,9 +123,9 @@ let questions = [
     {
         question: 'What team did Babe Ruth play for first?',
         answers: [
-            {text: 'Boston Red Sox', correct: false},
+            {text: 'Boston Red Sox', correct: true},
             {text: 'Chicago White Sox', correct: false},
-            {text: 'Baltimore Orioles', correct: true},
+            {text: 'Baltimore Orioles', correct: false},
             {text: 'New York Yankees', correct: false},
         ]
     },

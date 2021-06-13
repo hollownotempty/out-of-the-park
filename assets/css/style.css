@@ -77,6 +77,15 @@ footer {
     font-size: 2rem;
 }
 
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:visited {
+    color: white;
+}
+
 #game {
     min-height: calc(100vh - 280px);
     display: flex;
@@ -115,7 +124,6 @@ footer {
 #bottom-buttons {
     display: flex;
     justify-content: center;
-    height: 80px;
 }
 
 .bottom-btn {
@@ -165,9 +173,11 @@ footer {
 
 .end-screen {
     height: calc(100vh - 200px);
-    line-height: calc(100vh - 200px);
     text-align: center;
     font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .correct {
