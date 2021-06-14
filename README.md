@@ -17,6 +17,7 @@
 
 # Overview
 
+   Out Of The Park is a simple, fun and informative quiz game all about the world of baseball. 
 
 
 # UX
@@ -73,6 +74,7 @@ The wireframes for Out Of The Park can be viewed [here]().
 
 # Resources
 
+ - (Web Dev Simplified)[https://www.youtube.com/watch?v=riDzcEQbX6k&t=1316s]
 
 # Testing
 

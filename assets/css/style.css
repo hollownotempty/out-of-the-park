@@ -184,9 +184,10 @@ footer a:visited {
 }
 
 .correct {
-    background-color: lightgreen;
+    background-color: #90ee90;
 }
 
 .wrong {
     background-color: red;
+    color: white;
 }
