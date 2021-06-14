@@ -62,6 +62,7 @@ The wireframes for Out Of The Park can be viewed [here]().
 1. Languages 
    - HTML5 - the current standard.
    - CSS - the current standard.
+   - Javascript - the current standard.
 
 2. Integrations
    - Font Awesome - Icons used for social media links in the footer.
@@ -74,7 +75,7 @@ The wireframes for Out Of The Park can be viewed [here]().
 
 # Resources
 
- - (Web Dev Simplified)[https://www.youtube.com/watch?v=riDzcEQbX6k&t=1316s]
+ - [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1316s)
 
 # Testing
 
@@ -90,7 +91,7 @@ The same testing process was done across various browsers and devices, for the f
 This project was deployed to the internet using the built in Pages feature on GitHub using the following steps: 
 
    - Code was written in GitPod.
-   - Code pushed to GitHub [repository](https://github.com/hollownotempty/autonomix_project_1) using git.
+   - Code pushed to GitHub [repository](https://github.com/hollownotempty/out-of-the-park) using git.
    - From the repository page I clicked on the 'Settings' menu.
    - Navigated to the 'Pages' tab.
    - Opened the menu underneath 'Source' and select 'Master'.
