@@ -221,4 +221,8 @@ footer a:visited {
     #question-img {
         width: 195px;
     }
+
+    footer {
+        position: relative;
+    }
 }
