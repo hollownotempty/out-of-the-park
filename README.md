@@ -38,11 +38,11 @@ Users are looking to:
 
 ## User Stories
 
-- As a user i want to to test my knowledge of baseball trivia, for fun and entertainment.
-- As a user i want a multiple choice question style quiz, to assist my completion of the quiz.
-- As a user i want lots of choices of questions, to interest me in returning to complete the quiz again.
-- As a user i want a simple layout, to not be distracted while focusing on the quiz.
-- As a user i want a results screen which recounts how I did during the quiz.
+1. As a user i want to to test my knowledge of baseball trivia, for fun and entertainment.
+2. As a user i want a multiple choice question style quiz, to assist my completion of the quiz.
+3. As a user i want lots of choices of questions, to interest me in returning to complete the quiz again.
+4. As a user i want a simple layout, to not be distracted while focusing on the quiz.
+5. As a user i want a results screen which recounts how I did during the quiz.
 
 ## Site owner goals
 

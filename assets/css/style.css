@@ -107,6 +107,7 @@ footer a:visited {
 
 #question {
     font-size: 2rem;
+    text-align: center;
 }
 
 #answers-container {
@@ -204,6 +205,10 @@ footer a:visited {
     #game {
         margin: 30px;
     }
+
+    footer {
+        position: relative;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -215,14 +220,9 @@ footer a:visited {
 
     #question {
         font-size: 1.7rem;
-        text-align: center;
     }
 
     #question-img {
         width: 195px;
-    }
-
-    footer {
-        position: relative;
     }
 }
