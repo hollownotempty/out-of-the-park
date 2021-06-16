@@ -17,22 +17,32 @@
 
 # Overview
 
-   Out Of The Park is a simple, fun and informative quiz game all about the world of baseball. 
+   Out Of The Park is a simple, fun and informative quiz game all about the world of baseball. An avid fan of baseball can test their skills
+   of baseball trivia with multiple choice style questions spanning the entire history of the [MLB](https://en.wikipedia.org/wiki/Major_League_Baseball). 
 
 
 # UX
 
+- 'Out Of The Park' was completed as the second milestone project of the Code Institute Fullstack Development Course. This project utilises all the knowledge I have of HTML, CSS and Javascript to create an interactive web experience.
 
+- Quizzes are a fun and engaging way to test someones knowledge on a topic or trivia. I designed the experience of this site to be undistracting and fun challenge for fans to test their knowledge. 
 
 ## User Goals
 
 Users are looking to:
-
+- Take part in a fun game/quiz.
+- Learn about baseball while completing the quiz.
+- Be able to retake the quiz with different questions.
+- 
 
 
 ## User Stories
 
-
+- As a user i want to to test my knowledge of baseball trivia, for fun and entertainment.
+- As a user i want a multiple choice question style quiz, to assist my completion of the quiz.
+- As a user i want lots of choices of questions, to interest me in returning to complete the quiz again.
+- As a user i want a simple layout, to not be distracted while focusing on the quiz.
+- As a user i want a results screen which recounts how I did during the quiz.
 
 ## Site owner goals
 
@@ -41,21 +51,34 @@ Users are looking to:
 ## Design
 
 - Colour Scheme
-   - 
+   - The main colours were chosen from the Major League Baseball logo, the colours being an American flag blue and red. 
 
 - Typography
-   - 
+   - The fonts for this project are Poppins and Libre Franklin, with sans-serif as the fallback for both. 
 
 The wireframes for Out Of The Park can be viewed [here]().
 
 # Features
 
+## Header
+ - The Out Of The Park logo returns the user to the home menu.
+
+## Footer
+ - Contains social media links.
+
+## Game
+ - Questions appear in readable text.
+ - Four clickable buttons with answers contained in them.
+ - Questions flash red or green depending on whether they are correct or not. 
+ - Questions move along automatically after the user selects their answer.
+ - Image based questions display images automatically. 
 
 
-### Future Features:
-
-
-
+## Future Features:
+ - More styles of questions (eg. audio based, more or less than four options).
+ - Additional questions.
+ - Online leaderboard tallying correct answers/how long it took to complete.
+ - Difficulty settings at the start of the quiz.
 
 # Technologies Used
 
@@ -76,6 +99,15 @@ The wireframes for Out Of The Park can be viewed [here]().
 # Resources
 
  - [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k&t=1316s)
+ - Code Institute Course - Knowledge of HTML and CSS learned from here
+ - Slack Community - Assistance 
+ - Balsamiq - Used to create wireframes
+ - [Am I Responsive](http://ami.responsivedesign.is/#) - Used to see how the site would look on different devices
+ - Google Chrome Developer Tools - Used to debug the CSS and try out other stylings on the fly
+ - [Unsplash](https://unsplash.com/) - Stock image site
+ - [W3Schools](https://w3schools.com) - General knowledge
+ - [Colours Cafe Instagram Account](https://www.instagram.com/colours.cafe/) - Inspiration for color scheme
+ - [TinyPNG](https://tinypng.com/) - Used to compress images for the site
 
 # Testing
 
