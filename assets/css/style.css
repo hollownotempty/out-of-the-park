@@ -80,6 +80,7 @@ footer {
 footer a {
     text-decoration: none;
     color: white;
+    margin: 15px;
 }
 
 footer a:visited {
@@ -196,4 +197,27 @@ footer a:visited {
 .wrong {
     background-color: red;
     color: white;
+}
+
+@media only screen and (max-width: 940px) {
+    #game {
+        margin: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .btn {
+        width: 150px;
+        height: 150px;
+        font-size: 120%;
+    }
+
+    #question {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    #question-img {
+        width: 195px;
+    }
 }
