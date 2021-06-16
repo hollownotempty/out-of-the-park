@@ -1,113 +1,4 @@
-let questionElement = document.getElementById('question');
-let answerButtonsElement = document.getElementById('answers-container');
-let nextButton = document.getElementById('next-button');
-let finishButton = document.getElementById('finish-button');
-let fullGame = document.getElementById('game');
-let gameContainer = document.getElementById('container');
-let navButtons = document.getElementById('bottom-buttons');
-
-let shuffledQuestions, currentQuestionIndex
-
-let questionsAsked = 0;
-
-function checkAnswer(){
-    
-}
-
-
-function startGame(){
-    console.log('Game started...');
-    shuffledQuestions = questions.sort(() => Math.random () - .5)
-    currentQuestionIndex = 0
-    nextQuestion();
-}
-
-function showQuestion(question){
-    questionElement.innerText = question.question;
-    question.answers.forEach(answer => {
-        let button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
-        if (answer.correct){
-            button.dataset.correct = answer.correct;
-        }
-        answerButtonsElement.appendChild(button)
-        button.addEventListener('click', selectedAnswer)
-    })
-}
-
-function nextQuestion(){
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
-}
-
-nextButton.addEventListener('click', () => {
-    questionsAsked++;
-    checkAnswer();
-    if (questionsAsked === 9){
-        nextButton.innerText = 'Finish';
-    }
-    if (questionsAsked === 10){
-        fullGame.style.display = 'none';
-        nextButton.classList.add('hide')
-        gameEnd();
-    } else {
-        currentQuestionIndex++;
-        resetState();
-        nextQuestion();
-        nextButton.classList.add('hide')
-    };
-    console.log('Your current score is ' + score);
-})
-
-
-function selectedAnswer(e){
-    nextButton.classList.remove('hide');
-    let selectedButton = e.target;
-    let correct = selectedButton.dataset.correct;
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-    if (selectedButton.dataset.correct){
-        score++;
-    }
-}
-
-function setStatusClass(element, correct){
-    clearStatusClass(element)
-    if(correct){
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
-    }
-}
-
-function clearStatusClass(element){
-    element.classList.remove('correct');
-    element.classList.remove('wrong');
-}
-
-let score = 0;
-
-function gameEnd(event){
-    let endScreen = document.createElement('h2');
-    endScreen.classList.add('end-screen')
-    endScreen.innerText = 'You score is ' + score;
-    navButtons.appendChild(endScreen);
-    let restartButton = document.createElement('button');
-    restartButton.classList.add('restart-btn')
-    restartButton.innerText = 'Restart?';
-    restartButton.addEventListener('click', refreshPage())
-    navButtons.appendChild(restartButton);
-}
-
-function resetState(){while (answerButtonsElement.firstChild){
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-}
-}
-
-let MAX_QUESTIONS = 10;
-
-let questions = [
+const questions = [
     {
         question: 'Who is the Yankees current general manager?',
         answers: [
@@ -182,6 +73,7 @@ let questions = [
     },
     {
         question: 'What year was the MLB founded?',
+        imgSrc: 'assets/images/mlb.jpg',
         answers: [
             {text: '1876', correct: false},
             {text: '1932', correct: false},
@@ -244,7 +136,8 @@ let questions = [
         ]
     },
     {
-        question: 'What famous slugger retired after suffering from ALS?',
+        question: 'Who is this famous slugger who retired after suffering from ALS?',
+        imgSrc: 'assets/images/lou_gehrig.jpg',
         answers: [
             {text: 'Red Ruffing', correct: false},
             {text: 'Johnny Murphy', correct: false},
@@ -281,13 +174,141 @@ let questions = [
     },
     {
         question: 'What is another name for baseball stadium?',
+        imgSrc: 'assets/images/yankee_stadium.jpg',
         answers: [
             {text: 'A Ring', correct: false},
             {text: 'An Octagon', correct: false},
             {text: 'A Diamond', correct: true},
             {text: 'An Alley', correct: false},
         ]
-    }
+    },
+    {
+        question: "What is this hall of fame player's name?",
+        imgSrc: 'assets/images/joe_dimaggio.jpg',
+        answers: [
+            {text: 'Ken Griffey', correct: false},
+            {text: 'Babe Ruth', correct: false},
+            {text: 'Joe DiMaggio', correct: true},
+            {text: 'Derek Jeter', correct: false},
+        ]
+    },
+    {
+        question: "What team plays here in Fenway Park?",
+        imgSrc: 'assets/images/fenway_park.jpg',
+        answers: [
+            {text: 'Miami Marlins', correct: false},
+            {text: 'Boston Red Sox', correct: false},
+            {text: 'St Louis Cardinals', correct: true},
+            {text: 'New York Mets', correct: false},
+        ]
+    },
+    {
+        question: "What team plays here in Fenway Park?",
+        imgSrc: 'assets/images/fenway_park.jpg',
+        answers: [
+            {text: 'Miami Marlins', correct: false},
+            {text: 'Boston Red Sox', correct: false},
+            {text: 'St Louis Cardinals', correct: true},
+            {text: 'New York Mets', correct: false},
+        ]
+    },
+    
 ]
+
+const MAX_QUESTIONS = 10;
+
+let questionElement = document.getElementById('question');
+let answerButtonsElement = document.getElementById('answers-container');
+let nextButton = document.getElementById('next-button');
+let finishButton = document.getElementById('finish-button');
+let fullGame = document.getElementById('game');
+let gameContainer = document.getElementById('container');
+let navButtons = document.getElementById('bottom-buttons');
+let questionImg = document.getElementById('question-img');
+
+let shuffledQuestions, currentQuestionIndex
+
+let questionsAsked = 0;
+
+let score = 0;
+
+/**Shuffles questions and displays the first one. */
+function startGame(){
+    console.log('Game started...');
+    shuffledQuestions = questions.sort(() => Math.random () - .5)
+    currentQuestionIndex = 0
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
+}
+
+/**Shows question text, 
+populates answer fields and 
+loads image if necessary*/
+function showQuestion(question){
+    questionElement.innerText = question.question;
+    const optionImgSrc = question.imgSrc;
+        if(optionImgSrc) {
+            questionImg.classList.remove('hide');
+            questionImg.src = question.imgSrc;
+        } else {
+            questionImg.classList.add('hide');
+        }
+    question.answers.forEach(answer => {
+        let button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct){
+            button.dataset.correct = answer.correct;
+        }
+        answerButtonsElement.appendChild(button)
+        button.addEventListener('click', selectedAnswer)
+    })
+}
+
+/**Checks if selected answer is correct and increments the score if so,
+ * resets the state of the page and 
+ * moves on to next question after a timeout.
+ */
+function selectedAnswer(e){
+    let selectedButton = e.target;
+    let correct = selectedButton.dataset.correct;
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (selectedButton.dataset.correct){
+        score++;
+    }
+
+    const timeoutRef = setTimeout(function() {
+        questionsAsked++;
+        questionImg.classList.add('hide');
+    if (questionsAsked === 10){
+        fullGame.style.display = 'none';
+        gameEnd();
+    } else {
+        currentQuestionIndex++;
+        while (answerButtonsElement.firstChild){
+            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+        }
+        showQuestion(shuffledQuestions[currentQuestionIndex]);
+    };
+    }, 2000);
+}
+
+/**Adds the correct and wrong classes to the answer buttons. */
+function setStatusClass(element, correct){
+    if(correct){
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+/**Ends the game, displays final score and restart button. */
+function gameEnd(event){
+    let endScreen = document.createElement('h2');
+    endScreen.classList.add('end-screen')
+    endScreen.innerText = 'You score is ' + score;
+    navButtons.appendChild(endScreen);
+}
 
 document.onload = startGame();

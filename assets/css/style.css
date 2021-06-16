@@ -94,6 +94,12 @@ footer a:visited {
     flex-direction: column;
 }
 
+#question-img {
+    width: 300px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
 #game h2 {
     text-align: center;
 }
