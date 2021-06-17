@@ -33,7 +33,6 @@ Users are looking to:
 - Take part in a fun game/quiz.
 - Learn about baseball while completing the quiz.
 - Be able to retake the quiz with different questions.
-- 
 
 
 ## User Stories
@@ -46,7 +45,10 @@ Users are looking to:
 
 ## Site owner goals
 
-
+1. Teach about baseball through the questions.
+2. Be able to update questions easily through the code.
+3. Add additional types of questions easily. 
+4. 
 
 ## Design
 
@@ -56,7 +58,7 @@ Users are looking to:
 - Typography
    - The fonts for this project are Poppins and Libre Franklin, with sans-serif as the fallback for both. 
 
-The wireframes for Out Of The Park can be viewed [here]().
+The wireframes for Out Of The Park can be viewed [here](wireframes/ootp_wireframes.pdf).
 
 # Features
 
@@ -133,6 +135,13 @@ This project was deployed to the internet using the built in Pages feature on Gi
 
 ## Code Snippets
 
+- [Techie Delight](https://www.techiedelight.com/reload-page-with-javascript/) for 
+```
+   document.getElementById("reload").onclick = function() {
+        location.reload(true);
+    }
+```
+- 
 
 
 ## Media 

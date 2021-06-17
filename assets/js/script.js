@@ -197,22 +197,11 @@ const questions = [
         imgSrc: 'assets/images/fenway_park.jpg',
         answers: [
             {text: 'Miami Marlins', correct: false},
-            {text: 'Boston Red Sox', correct: false},
-            {text: 'St Louis Cardinals', correct: true},
+            {text: 'Boston Red Sox', correct: true},
+            {text: 'St Louis Cardinals', correct: false},
             {text: 'New York Mets', correct: false},
         ]
     },
-    {
-        question: "What team plays here in Fenway Park?",
-        imgSrc: 'assets/images/fenway_park.jpg',
-        answers: [
-            {text: 'Miami Marlins', correct: false},
-            {text: 'Boston Red Sox', correct: false},
-            {text: 'St Louis Cardinals', correct: true},
-            {text: 'New York Mets', correct: false},
-        ]
-    },
-    
 ]
 
 const MAX_QUESTIONS = 10;
@@ -223,7 +212,7 @@ let nextButton = document.getElementById('next-button');
 let finishButton = document.getElementById('finish-button');
 let fullGame = document.getElementById('game');
 let gameContainer = document.getElementById('container');
-let navButtons = document.getElementById('bottom-buttons');
+let endScreenContainer = document.getElementById('end-screen');
 let questionImg = document.getElementById('question-img');
 
 let shuffledQuestions, currentQuestionIndex
@@ -305,10 +294,24 @@ function setStatusClass(element, correct){
 
 /**Ends the game, displays final score and restart button. */
 function gameEnd(event){
-    let endScreen = document.createElement('h2');
-    endScreen.classList.add('end-screen')
-    endScreen.innerText = 'You score is ' + score;
-    navButtons.appendChild(endScreen);
+    endScreenContainer.classList.remove('hide');
+    endScreenContainer.style.display = 'flex';
+    let scoreText = document.createElement('h2');
+    if (score <= 5){
+        scoreText.innerText = 'You score is ' + score + '.';
+    } else if (score <= 8 && score > 5){
+        scoreText.innerText = "You hit a home run, you scored " + score + '!';
+    } else if (score <= 10 && score > 8){
+        scoreText.innerText = "You hit a grand slam, you scored " + score + '!';
+    }
+    endScreenContainer.appendChild(scoreText);
+    let restartButton = document.createElement('button');
+    restartButton.innerText = 'Retry Quiz';
+    restartButton.classList.add('restart-btn');
+    restartButton.onclick = function() {
+        location.reload(true);
+    }
+    endScreenContainer.appendChild(restartButton);
 }
 
 document.onload = startGame();
