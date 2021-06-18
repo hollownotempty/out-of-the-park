@@ -330,6 +330,7 @@ function gameEnd(event){
     endScreenContainer.appendChild(restartButton);
 }
 
+/** Starts timer */
 function setTime() {
   ++totalSeconds;
   secondsLabel.innerHTML = pad(totalSeconds % 60);
