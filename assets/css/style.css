@@ -86,8 +86,11 @@ footer a:visited {
     color: white;
 }
 
-#game {
+#container {
     min-height: calc(100vh - 200PX);
+}
+
+#game {
     display: flex;
     justify-content: center;
     align-items: center;
