@@ -214,12 +214,22 @@ let fullGame = document.getElementById('game');
 let gameContainer = document.getElementById('container');
 let endScreenContainer = document.getElementById('end-screen');
 let questionImg = document.getElementById('question-img');
+let questionCounter = document.getElementById('questions-asked');
 
 let shuffledQuestions, currentQuestionIndex
+
+let currentQuestion = 1;
+
+questionCounter.innerText = currentQuestion;
 
 let questionsAsked = 0;
 
 let score = 0;
+
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+setInterval(setTime, 1000);
 
 /**Shuffles questions and displays the first one. */
 function startGame(){
@@ -269,6 +279,7 @@ function selectedAnswer(e){
 
     const timeoutRef = setTimeout(function() {
         questionsAsked++;
+        console.log(currentQuestion);
         questionImg.classList.add('hide');
     if (questionsAsked === 10){
         fullGame.style.display = 'none';
@@ -280,8 +291,13 @@ function selectedAnswer(e){
         }
         showQuestion(shuffledQuestions[currentQuestionIndex]);
     };
+    currentQuestion++;
+    questionCounter.innerText = currentQuestion;
     }, 2000);
+    
 }
+
+// questionCounter.innerText = currentQuestion;
 
 /**Adds the correct and wrong classes to the answer buttons. */
 function setStatusClass(element, correct){
@@ -298,11 +314,11 @@ function gameEnd(event){
     endScreenContainer.style.display = 'flex';
     let scoreText = document.createElement('h2');
     if (score <= 5){
-        scoreText.innerText = 'You score is ' + score + '.';
+        scoreText.innerText = 'You score is ' + score + ' out of 10.';
     } else if (score <= 8 && score > 5){
-        scoreText.innerText = "You hit a home run, you scored " + score + '!';
+        scoreText.innerText = "You hit a home run, you scored " + score + ' out of 10!';
     } else if (score <= 10 && score > 8){
-        scoreText.innerText = "You hit a grand slam, you scored " + score + '!';
+        scoreText.innerText = "You hit a grand slam, you scored " + score + ' out of 10!';
     }
     endScreenContainer.appendChild(scoreText);
     let restartButton = document.createElement('button');
@@ -312,6 +328,21 @@ function gameEnd(event){
         location.reload(true);
     }
     endScreenContainer.appendChild(restartButton);
+}
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
 }
 
 document.onload = startGame();

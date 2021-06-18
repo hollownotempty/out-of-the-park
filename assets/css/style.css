@@ -81,6 +81,7 @@ footer a {
     margin: 15px;
 }
 
+
 footer a:visited {
     color: white;
 }
@@ -91,6 +92,19 @@ footer a:visited {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#game-info {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+    align-items: center;
+}
+
+#game-info img {
+    width: 105px;
 }
 
 #question-img {
@@ -197,6 +211,15 @@ footer a:visited {
 @media only screen and (max-width: 940px) {
     #game {
         margin: 30px;
+    }
+
+    #game-info {
+        width: 80%;
+        font-size: 1rem;
+    }
+    
+    #game-info img {
+        width: 60px;
     }
 }
 

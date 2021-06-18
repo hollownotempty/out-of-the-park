@@ -141,12 +141,36 @@ This project was deployed to the internet using the built in Pages feature on Gi
         location.reload(true);
     }
 ```
-- 
+- [Andrew.Wolphoe](https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript) for
+
+```
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+```
 
 
 ## Media 
 
-
+- Unsplash for stock images
+- Google images for vector baseball bats and question images
+- MLB.com for MLB logo 
 
 ## Acknowledgements 
 
