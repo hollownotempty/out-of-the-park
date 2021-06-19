@@ -1,7 +1,7 @@
 
 # Out Of The Park
 
-![Responsive](assets/screenshots/responsive_layout.png)
+Out Of The Park can be viewed [here](https://hollownotempty.github.io/out-of-the-park/index.html) at the deployed link. 
 
 # Table Of Contents
 
@@ -58,7 +58,7 @@ Users are looking to:
 - Typography
    - The fonts for this project are Poppins and Libre Franklin, with sans-serif as the fallback for both. 
 
-The wireframes for Out Of The Park can be viewed [here](wireframes/ootp_wireframes.pdf).
+The wireframes for Out Of The Park can be viewed [here](assets/images/wireframes/ootp_wireframes.pdf).
 
 # Features
 
@@ -164,7 +164,6 @@ function pad(val) {
   }
 }
 ```
-
 
 ## Media 
 

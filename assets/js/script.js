@@ -1,4 +1,4 @@
-const questions = [
+const QUESTION_BANK = [
     {
         question: 'Who is the Yankees current general manager?',
         answers: [
@@ -234,7 +234,7 @@ setInterval(setTime, 1000);
 /**Shuffles questions and displays the first one. */
 function startGame(){
     console.log('Game started...');
-    shuffledQuestions = questions.sort(() => Math.random () - .5)
+    shuffledQuestions = QUESTION_BANK.sort(() => Math.random () - .5)
     currentQuestionIndex = 0
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
@@ -294,7 +294,6 @@ function selectedAnswer(e){
     currentQuestion++;
     questionCounter.innerText = currentQuestion;
     }, 2000);
-    
 }
 
 // questionCounter.innerText = currentQuestion;
@@ -324,10 +323,15 @@ function gameEnd(event){
     let restartButton = document.createElement('button');
     restartButton.innerText = 'Retry Quiz';
     restartButton.classList.add('restart-btn');
-    restartButton.onclick = function() {
-        location.reload(true);
-    }
+    restartButton.onclick = resetGame;
     endScreenContainer.appendChild(restartButton);
+}
+
+function resetGame(){
+    endScreenContainer.classList.add('hide');
+
+    startGame();
+    
 }
 
 /** Starts timer */
