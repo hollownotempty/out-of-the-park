@@ -296,8 +296,6 @@ function selectedAnswer(e){
     }, 2000);
 }
 
-// questionCounter.innerText = currentQuestion;
-
 /**Adds the correct and wrong classes to the answer buttons. */
 function setStatusClass(element, correct){
     if(correct){

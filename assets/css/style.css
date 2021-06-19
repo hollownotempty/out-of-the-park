@@ -59,9 +59,6 @@ header a {
 }
 
 #start-menu a:hover {
-    /* color: #D50032;
-    text-shadow: 0px 0px 6px rgba(213, 0, 50, 1); */
-    /* transition: 500ms ease-out; */
     opacity: 0.7;
 }
 
@@ -155,7 +152,6 @@ footer a:visited {
 }
 
 #end-screen {
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
