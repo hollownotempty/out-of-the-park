@@ -96,6 +96,7 @@ footer a:visited {
 
 #container {
     min-height: calc(100vh - 200PX);
+    padding-top: 50px;
 }
 
 #game {
@@ -244,5 +245,9 @@ footer a:visited {
 
     #question-img {
         width: 195px;
+    }
+
+    #container {
+        padding-top: 0;
     }
 }

@@ -323,15 +323,10 @@ function gameEnd(event){
     let restartButton = document.createElement('button');
     restartButton.innerText = 'Retry Quiz';
     restartButton.classList.add('restart-btn');
-    restartButton.onclick = resetGame;
+    restartButton.onclick = () => {
+        location.reload(true)
+    };
     endScreenContainer.appendChild(restartButton);
-}
-
-function resetGame(){
-    endScreenContainer.classList.add('hide');
-
-    startGame();
-    
 }
 
 /** Starts timer */
