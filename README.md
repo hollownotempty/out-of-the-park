@@ -62,6 +62,8 @@ The wireframes for Out Of The Park can be viewed [here](assets/images/wireframes
 
 # Features
 
+![home](assets/images/screenshots/home_page.png)
+
 ## Header
  - The Out Of The Park logo returns the user to the home menu.
 
@@ -74,6 +76,8 @@ The wireframes for Out Of The Park can be viewed [here](assets/images/wireframes
  - Questions flash red or green depending on whether they are correct or not. 
  - Questions move along automatically after the user selects their answer.
  - Image based questions display images automatically. 
+
+ ![game](assets/images/screenshots/question_page.png)
 
 
 ## Future Features:
@@ -173,4 +177,4 @@ function pad(val) {
 
 ## Acknowledgements 
 
-
+I would like to thank my mentor Akshat Garg for his guidance and advice and the Code Institute Slack Community for support with project related frustrations.
