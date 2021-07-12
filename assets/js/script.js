@@ -208,10 +208,7 @@ const MAX_QUESTIONS = 10;
 
 let questionElement = document.getElementById('question');
 let answerButtonsElement = document.getElementById('answers-container');
-let nextButton = document.getElementById('next-button');
-let finishButton = document.getElementById('finish-button');
 let fullGame = document.getElementById('game');
-let gameContainer = document.getElementById('container');
 let endScreenContainer = document.getElementById('end-screen');
 let questionImg = document.getElementById('question-img');
 let questionCounter = document.getElementById('questions-asked');
