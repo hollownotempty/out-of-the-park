@@ -139,6 +139,12 @@ This project was deployed to the internet using the built in Pages feature on Gi
    - Opened the menu underneath 'Source' and select 'Master'.
    - This published the site on GitHub pages and shows the link to access it.
 
+Within Gitpod I was able to deploy a version of the site locally to test it in my browser using the following 
+command in the terminal.
+```
+python3 -m http.server
+```
+
 # Credits 
 
 ## Code Snippets
