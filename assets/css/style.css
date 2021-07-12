@@ -8,12 +8,14 @@
 
 :root {
     background: linear-gradient(-45deg, #eb6138, #D50032, #002D72, #199b7c);
+    /* background-size used to push background outside window so it can be animated to move*/
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     color: white;
     font-family: 'Libre Franklin', sans-serif;
 }
 
+/* used to animate the background */
 @keyframes gradient {
       0% {
           background-position: 0% 50%;
@@ -26,6 +28,7 @@
       }
 }
 
+/* general stylings used across website */
 h1, h2, h3, h4, h5 {
     font-family: 'Poppins', sans-serif;
 }
@@ -41,29 +44,6 @@ header a {
     height: 100px;
     text-decoration: none;
     color: white;
-}
-
-#start-menu {
-    height: calc(100vh - 200px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-}
-
-#start-menu a {
-    text-decoration: none;
-    color: white;
-    transition: all 500ms ease-out;
-}
-
-#start-menu a:hover {
-    opacity: 0.7;
-}
-
-#game-info div {
-    width: 50px;
 }
 
 footer {
@@ -91,6 +71,31 @@ footer a:visited {
     color: white;
 }
 
+/* home menu stylings */
+#start-menu {
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+#start-menu a {
+    text-decoration: none;
+    color: white;
+    transition: all 500ms ease-out;
+}
+
+#start-menu a:hover {
+    opacity: 0.7;
+}
+
+#game-info div {
+    width: 50px;
+}
+
+/* Stylings for the quiz page */
 #container {
     min-height: calc(100vh - 200PX);
     padding-top: 50px;
@@ -179,14 +184,7 @@ footer a:visited {
     opacity: 0.8;
 }
 
-.answers-container button.correct {
-    background-color: lightgreen;
-}
-
-.answers-container button.wrong {
-    background-color: red;
-}
-
+/* instruction page stylings */
 #instructions {
     display: flex;
     flex-direction: column;
@@ -204,10 +202,13 @@ footer a:visited {
     margin-top: 30px;
 }
 
+/* The hide class will be removed and added by script.js to display or hide elements when needed */
 .hide {
     display: none;
 }
 
+/* .correct and .wrong used to change color of quiz buttons to display which if 
+selected answer is correct */
 .correct {
     background-color: #90ee90;
 }
@@ -217,6 +218,7 @@ footer a:visited {
     color: white;
 }
 
+/* all media queries */
 @media only screen and (max-width: 940px) {
     #game-info {
         width: 80%;
