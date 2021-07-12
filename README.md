@@ -122,7 +122,11 @@ The same testing process was done across various browsers and devices, for the f
 # Code Validation 
 
 - HTML - [W3C HTML Validator](https://validator.w3.org/)
+![index](assets/images/screenshots/index_validation.png)
+![game](assets/images/screenshots/game_validation.png)
+![instructions](assets/images/screenshots/instructions_validation.png)
 - CSS - [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
+![css](assets/images/screenshots/css_validation.png)
 
 # Deployment
 
