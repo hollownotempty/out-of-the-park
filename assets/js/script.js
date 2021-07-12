@@ -274,10 +274,13 @@ function selectedAnswer(e){
         score++;
     }
 
-    const timeoutRef = setTimeout(function() {
-        questionsAsked++;
-        console.log(currentQuestion);
-        questionImg.classList.add('hide');
+    const timeoutRef = setTimeout(nextQuestion, 2000);
+}
+
+/** Waits after answer is selected to display the next question */ 
+function nextQuestion(){
+    questionsAsked++;
+    questionImg.classList.add('hide');
     if (questionsAsked === 10){
         fullGame.style.display = 'none';
         gameEnd();
@@ -290,7 +293,6 @@ function selectedAnswer(e){
     };
     currentQuestion++;
     questionCounter.innerText = currentQuestion;
-    }, 2000);
 }
 
 /**Adds the correct and wrong classes to the answer buttons. */
