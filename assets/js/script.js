@@ -202,7 +202,7 @@ const QUESTION_BANK = [
             {text: 'New York Mets', correct: false},
         ]
     },
-]
+];
 
 const MAX_QUESTIONS = 10;
 
@@ -213,7 +213,7 @@ let endScreenContainer = document.getElementById('end-screen');
 let questionImg = document.getElementById('question-img');
 let questionCounter = document.getElementById('questions-asked');
 
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex;
 
 let currentQuestion = 1;
 
@@ -231,8 +231,8 @@ setInterval(setTime, 1000);
 /**Shuffles questions and displays the first one. */
 function startGame(){
     console.log('Game started...');
-    shuffledQuestions = QUESTION_BANK.sort(() => Math.random () - .5)
-    currentQuestionIndex = 0
+    shuffledQuestions = QUESTION_BANK.sort(() => Math.random () - .5);
+    currentQuestionIndex = 0;
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
@@ -249,15 +249,15 @@ function showQuestion(question){
             questionImg.classList.add('hide');
         }
     question.answers.forEach(answer => {
-        let button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
+        let button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
         if (answer.correct){
             button.dataset.correct = answer.correct;
         }
-        answerButtonsElement.appendChild(button)
-        button.addEventListener('click', selectedAnswer)
-    })
+        answerButtonsElement.appendChild(button);
+        button.addEventListener('click', selectedAnswer);
+    });
 }
 
 /**Checks if selected answer is correct and increments the score if so,
@@ -268,8 +268,8 @@ function selectedAnswer(e){
     let selectedButton = e.target;
     let correct = selectedButton.dataset.correct;
     Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
+        setStatusClass(button, button.dataset.correct);
+    });
     if (selectedButton.dataset.correct){
         score++;
     }
@@ -290,7 +290,7 @@ function nextQuestion(){
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
         }
         showQuestion(shuffledQuestions[currentQuestionIndex]);
-    };
+    }
     currentQuestion++;
     questionCounter.innerText = currentQuestion;
 }
@@ -298,9 +298,9 @@ function nextQuestion(){
 /**Adds the correct and wrong classes to the answer buttons. */
 function setStatusClass(element, correct){
     if(correct){
-        element.classList.add('correct')
+        element.classList.add('correct');
     } else {
-        element.classList.add('wrong')
+        element.classList.add('wrong');
     }
 }
 
@@ -321,7 +321,7 @@ function gameEnd(event){
     restartButton.innerText = 'Retry Quiz';
     restartButton.classList.add('restart-btn');
     restartButton.onclick = () => {
-        location.reload(true)
+        location.reload(true);
     };
     endScreenContainer.appendChild(restartButton);
 }
