@@ -204,8 +204,6 @@ const QUESTION_BANK = [
     },
 ];
 
-const MAX_QUESTIONS = 10;
-
 let questionElement = document.getElementById('question');
 let answerButtonsElement = document.getElementById('answers-container');
 let fullGame = document.getElementById('game');
@@ -266,7 +264,6 @@ function showQuestion(question){
  */
 function selectedAnswer(e){
     let selectedButton = e.target;
-    let correct = selectedButton.dataset.correct;
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
     });
@@ -274,7 +271,8 @@ function selectedAnswer(e){
         score++;
     }
 
-    const timeoutRef = setTimeout(nextQuestion, 2000);
+    // const timeoutRef = setTimeout(nextQuestion, 2000);
+    setTimeout(nextQuestion, 2000);
 }
 
 /** Waits after answer is selected to display the next question */ 
