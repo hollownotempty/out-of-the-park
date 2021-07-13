@@ -98,7 +98,6 @@ footer a:visited {
 /* Stylings for the quiz page */
 #container {
     min-height: calc(100vh - 200PX);
-    padding-top: 50px;
 }
 
 #game {
