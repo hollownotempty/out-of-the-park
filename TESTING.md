@@ -3,6 +3,7 @@
 To test the site, a sequence of steps were followed across various browsers and devices. The steps were as follow: 
 
  - Validate HTML and CSS using their respective validators.
+ - Javascript was ran through [JSHint](https://jshint.com/) to catch any problems with the code that weren't apparent already.
  - All pages were checked to make sure that layout matched the [wireframes](assets/images/wireframes/ootp_wireframes.pdf). 
  - All text was read through to be certain it was easy to read, understand and has no spelling or grammar errors.
  - Make sure that all images load in within a reasonable amount of time. 
