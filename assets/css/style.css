@@ -141,6 +141,7 @@ footer a:visited {
     grid-template-columns: repeat(2, auto);
 }
 
+/* Stylings for answer buttons */
 .btn {
     padding: 10px;
     margin: 10px;
@@ -155,6 +156,7 @@ footer a:visited {
     background-color: white;
 }
 
+/* Stylings for the text that appears upon completing the game */
 #end-screen {
     justify-content: center;
     align-items: center;
